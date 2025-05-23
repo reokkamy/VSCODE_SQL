@@ -1,0 +1,21 @@
+--테이블에 있는 데이터 삭제 하기
+
+--기본문법
+--조건에 맞는 데이터 삭제하기
+DELETE FROM 테이블명 WHERE 조건;
+DELETE FROM EMP WHERE DEPTNO = 30;
+
+
+--서브쿼리를 활용한 삭제
+DELETE FROM EMP_COPY
+WHERE DEPTNO IN (
+    SELECT DEPTNO FROM DEPT WHERE LOC = "DALLAS"
+);
+
+--전체행 삭제하기
+DELETE FROM EMP_COPY;
+
+SELECT * FROM EMP_COPY;
+
+--부서번호가 30인 사원 삭제하기
+DELETE FROM EMP_COPY WHERE DEPTNO = 30;
