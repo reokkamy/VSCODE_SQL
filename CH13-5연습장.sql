@@ -31,7 +31,7 @@ CREATE USER KMJ IDENTIFIED BY 1212; --  새 사용자 생성
 GRANT CREATE SESSION TO KMJ; -- 세션 생성 권한 부여
 
 --사용자 조회
-SELECT * FROM ALL_USERS WHERE USERNAME;  -- KMJ 새 사용자 확인
+SELECT * FROM ALL_USERS WHERE USERNAME = 'KMJ'; --새 사용자 확인
 
 
 --세션 기존 SCOTT 계정-> KMJ 계정으로 변경
@@ -83,3 +83,5 @@ SELECT E.ENAME AS 사원명,
          JOIN EMP2 M ON E.MGR = M.EMPNO  --자가조인
          JOIN SALGRADE2 S ON E.SAL BETWEEN S.LOSAL AND S.HISAL --비등가 조인
          WHERE E.MGR IS NOT NULL; --관리자가 있는 사원만 조회
+
+         COMMIT;
