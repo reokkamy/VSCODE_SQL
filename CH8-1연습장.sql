@@ -5,6 +5,7 @@ SELECT * FROM EMP;   --몇개: 14개
 --KING, DEPTNO 10, DNAME: ACCOUNTING
 --이거 외에 다른 부서도 출력이됨(중복)
 SELECT E.ENAME, D.DNAME   --총 56개
+
 FROM EMP E, DEPT D;
 
 --테이블 별칭이용해서 조인해보기

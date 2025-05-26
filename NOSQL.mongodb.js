@@ -46,10 +46,11 @@ for (let i = 2000; i < 3000; i++) {
 }
 db.logs.find() //컬렉션에 있는 모든 데이터 조회
 
-db.createCollection('logs2', { capped: true, size: 5000 })
+db.createCollection('logs3', { capped: true, size: 5000 })
 
-for (let i = 1000; i < 2000; i++) {
+for (let i = 0; i < 1000; i++) {
     db.logs2.insertOne({
+        //로그 메시지 감싸는 기호는 백틱(`) 사용
         message: `로그 메시지 ${i}`,
         timestamp: new Date(),//오라클에서 sysdate와 같은 기능
     })
